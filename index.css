@@ -1,4 +1,33 @@
-/*=================== 公共的 =====================*/
+/*------------- 隐藏滚动条 Start ---------------*/
+
+/* Chrome */
+
+body::-webkit-scrollbar {
+    display: none;
+}
+
+/* IE/Edge */
+
+body {
+    -ms-overflow-style: none;
+}
+
+/* Firefox */
+
+/* html {
+    overflow: -moz-hidden-unscrollable;
+    height: 100%;
+}
+
+body {
+    height: 100%;
+    width: calc(100vw + 18px);
+    overflow: auto;
+} */
+
+/*------------------ 隐藏滚动条 End --------------*/
+
+/*------------------ 公共的 Start ----------------*/
 
 body {
     background-color: #f2f2f2;
@@ -6,14 +35,14 @@ body {
 }
 
 .unit-separator {
-    height: 160px;
+    height: 17vh;
     background-color: #808080;
     text-align: center;
 }
 
 .unit-separator .separator-title {
-    padding-top: 40px;
-    font-size: 25px;
+    padding-top: 5vh;
+    font-size: 2vw;
     font-weight: bold;
     color: #fefefe;
 }
@@ -23,21 +52,23 @@ body {
 }
 
 .unit-separator .separator-description {
-    font-size: 18px;
+    font-size: 1vw;
     color: #fefefe;
 }
 
 .unit-content {
-    height: 674px;
+    height: 76vh;
 }
 
-/*=================== 导航栏 =====================*/
+/*------------------ 公共的 End ----------------*/
+
+/*------------------ 导航栏 Start -----------------*/
 
 #navigation-background {
     background-color: black;
     position: fixed;
-    height: 68px;
-    /* width: 100%; */
+    width: 100vw;
+    height: 10vh;
     left: 0;
     right: 0;
     z-index: 99;
@@ -46,30 +77,30 @@ body {
 #navigation {
     background-color: transparent;
     position: fixed;
-    height: 68px;
-    width: 100%;
+    width: 100vw;
+    height: 10vh;
     z-index: 100;
 }
 
 #navigation #company-logo {
-    height: 36px;
-    margin-top: 16px;
-    margin-left: 30px;
+    height: 4.5vh;
+    margin-top: 3vh;
+    margin-left: 5vh;
 }
 
 #navigation ul {
     list-style-type: none;
     float: right;
-    margin-top: 16px;
-    margin-right: 30px;
+    margin-top: 3vh;
+    margin-right: 5vh;
     text-align: center;
-    font-size: 16px;
+    font-size: 1.2vw;
 }
 
 #navigation li {
     float: left;
     /*改动的地方*/
-    width: 120px;
+    width: 10vw;
     padding: 10px;
 }
 
@@ -83,13 +114,15 @@ body {
     /*整体变为可点击区域，而不只是字*/
 }
 
-/*===================== 首页 =======================*/
+/*------------------ 导航栏 End -----------------*/
+
+/*------------------- 首页 Start -----------------*/
 
 #home-page {
     background-image: url("img/home-page-background.gif");
     background-size: 100% 100%;
-    height: 768px;
-    width: 100%;
+    width: 100vw;
+    height: 100vh;
 }
 
 #home-page p {
@@ -99,47 +132,58 @@ body {
 
 #home-page button {
     margin-left: 13%;
-    margin-top: 20px;
-    font-size: large;
+    margin-top: 2%;
+    padding: 1.5vh 5vw;
+    font-size: 1.5vw;
     color: #007a82;
 }
 
-/*===================== 关于 RPA =======================*/
+/*------------------- 首页 End -----------------*/
 
-#about-rpa {}
+/*------------------- 关于 RPA Start --------------*/
 
-/*===================== Uni Studio =======================*/
-
-#uni-studio {}
-
-/*===================== 解决方案 =======================*/
-
-#solution {}
-
-/*===================== 关于我们 =======================*/
-
-#about-us {}
-
-/*===================== 页脚 =======================*/
-
-#page-footer {
-    background-color: #007a82;
-    height: 320px;
-    color: #fefefe;
-    padding: 40px 80px;
+#about-rpa {
+    width: 100vw;
 }
 
-#page-footer p {
-    line-height: 160%;
-}
-
-.slide {
-    width: 100%;
+#about-rpa .slide {
+    width: 100vw;
+    height: 100vh;
     min-height: 180px;
     overflow: hidden;
     position: relative;
     left: auto;
     right: auto;
+}
+
+#about-rpa .slide .img img {
+    width: 30%;
+}
+
+#about-rpa .slide .img h2 {
+    padding: 2% 0px;
+}
+
+#about-rpa .slide .img p {
+    text-align: justify;
+}
+
+#about-rpa .slide-number {
+    text-align: center;
+    margin-top: 70vh;
+    z-index: 999;
+}
+
+#about-rpa .slide-number button {
+    width: 23px;
+    height: 23px;
+    border-radius: 50%;
+    border-style: solid;
+    border-color: #adadad;
+    background-color: white;
+    margin: 0 10px;
+    font-size: smaller;
+    color: #007a82;
 }
 
 .slide .img {
@@ -150,7 +194,7 @@ body {
     width: calc(100% - 14px);
     height: calc(100% - 14px);
     margin: 7px;
-    padding: 40px;
+    padding: 20px;
     text-align: center;
     text-decoration: none;
     color: #808080;
@@ -169,30 +213,30 @@ body {
 }
 
 .slide .img2 {
-    width: 24%;
-    height: 54%;
-    top: 10%;
-    left: 7%;
+    width: 15vw;
+    height: 36vh;
+    top: 10vh;
+    left: 23vw;
     z-index: 2;
-    font-size: smaller;
+    font-size: 0.8vw;
 }
 
 .slide .img3 {
-    width: 32%;
-    height: 72%;
-    top: 20%;
-    left: 34%;
+    width: 20vw;
+    height: 48vh;
+    top: 15vh;
+    left: 40vw;
     z-index: 3;
-    font-size: larger;
+    font-size: 1.2vw;
 }
 
 .slide .img4 {
-    width: 24%;
-    height: 54%;
-    top: 10%;
-    left: 69%;
+    width: 15vw;
+    height: 36vh;
+    top: 10vh;
+    left: 62vw;
     z-index: 2;
-    font-size: smaller;
+    font-size: 0.8vw;
 }
 
 .slide .img5 {
@@ -202,3 +246,158 @@ body {
     left: 110%;
     z-index: 1;
 }
+
+/*------------------- 关于 RPA End --------------*/
+
+/*------------------ Uni Studio Start --------------*/
+
+#uni-studio {
+    width: 100vw;
+}
+
+#uni-studio .program-display {
+    background-image: url('img/uni-studio-border.png');
+    background-size: cover;
+    margin-left: 23%;
+    margin-top: 3vh;
+    width: 88vh;
+    height: 71vh;
+}
+
+#uni-studio .program-display img {
+    position: relative;
+    border-style: dotted;
+    border-color: #00a3ae;
+}
+
+#uni-studio .program-model-descript {
+    height: 100%;
+    text-align: center;
+}
+
+#uni-studio .program-model-descript button {
+    margin-top: 20%;
+    color: #ffc000;
+    pointer-events: none;
+    font-size: 2vw;
+}
+
+#uni-studio .program-model-descript ul {
+    margin-top: 10%;
+    margin-left: -5vw;
+    color: #808080;
+    font-size: 1.2vw;
+    text-align: left;
+    list-style-type: none;
+}
+
+/*------------------ Uni Studio End --------------*/
+
+/*------------------- 解决方案 Start -------------*/
+
+#solution {
+    width: 100vw;
+}
+
+#solution .item-button {
+    margin: 3% 4% 0% 8%;
+}
+
+#solution .item-button .shade {
+    position: absolute;
+    width: 1vw;
+    height: 100%;
+    background-color: #f2f2f2;
+}
+
+#solution .item-button button {
+    color: #808080;
+    margin: 1vh 0px;
+    padding: 1.6vh 60px;
+    width: 20vw;
+    font-size: 1.4vw;
+}
+
+#solution .item-description .title {
+    margin-top: 8vh;
+    color: #808080;
+}
+
+#solution .item-description .title p {
+    margin-top: 2vh;
+    font-size: 2vw;
+}
+
+#solution .item-description img {
+    width: 8vh;
+}
+
+#solution .item-description ul {
+    margin-top: 1vh;
+    margin-right: 12vw;
+    color: #808080;
+    font-size: 1.2vw;
+    text-align: left;
+    list-style-type: none;
+}
+
+/*------------------- 解决方案 End --------------*/
+
+/*------------------- 关于我们 Start --------------*/
+
+#about-us {
+    width: 100vw;
+}
+
+#about-us .unit-content {
+    margin: 2vh 40vh 0px 40vh;
+}
+
+#about-us .description ul {
+    margin-top: 5vh;
+    margin-right: 30px;
+    color: #808080;
+    font-size: 1.2vw;
+    text-align: left;
+    list-style-type: none;
+}
+
+#about-us .description li {
+    padding: 2vh;
+    line-height: 200%;
+}
+
+#about-us .icon {
+    text-align: center;
+}
+
+#about-us .icon img {
+    margin-top: 3vh;
+    width: 15vh;
+    border-radius: 10%;
+}
+
+#about-us .icon button {
+    margin-top: 4vh;
+    padding: 1.5vh 5vw;
+    color: #808080;
+    font-size: 1.2vw;
+}
+
+/*------------------- 关于我们 End ---------------*/
+
+/*------------------- 页脚 Start --------------*/
+
+#page-footer {
+    background-color: #007a82;
+    width: 100vw;
+    height: auto;
+    color: #fefefe;
+    padding: 3% 17% 1% 17%;
+}
+
+#page-footer p {
+    line-height: 160%;
+}
+
+/*------------------- 页脚 End ----------------*/

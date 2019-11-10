@@ -26,7 +26,7 @@ $(function () {
 function topClickLink() {
     $("#navigation .top-link").click(function () {
         $("html, body").animate({
-            scrollTop: $($(this).attr("href")).offset().top - 60 + "px"
+            scrollTop: $($(this).attr("href")).offset().top - 66 + "vh"
         }, {
             duration: 300,
             easing: "linear"
@@ -401,7 +401,7 @@ var solutionContentList = {
  * 重置解决方案选择状态
  */
 function resetSolutionSelector() {
-    $('#solution .title-selector').each(function () {
+    $('#solution button').each(function () {
         this.style.backgroundColor = '#ffffff';
     });
 }
@@ -411,7 +411,7 @@ function resetSolutionSelector() {
  * @param {*} item 
  */
 function setSolutionContent(item) {
-    $('#solution h1').text(item.title);
+    $('#solution .title p').text(item.title);
     $('#solution img').attr('src', item.img);
     $('#solution ul').empty();
     item.paragraphs.forEach(function (item) {
@@ -424,12 +424,12 @@ function setSolutionContent(item) {
  */
 function setDefaultSolutionContent() {
     setSolutionContent(solutionContentList['财务']);
-    $('#solution .title-selector')[0].style.backgroundColor = '#e6e6e6'
+    $('#solution button')[0].style.backgroundColor = '#e6e6e6'
 }
 
 $(function () {
     setDefaultSolutionContent();
-    $('#solution .title-selector').mouseover(function (event) {
+    $('#solution button').mouseover(function (event) {
         resetSolutionSelector();
         event.currentTarget.style.backgroundColor = '#e6e6e6';
         setSolutionContent(solutionContentList[event.currentTarget.innerText]);
