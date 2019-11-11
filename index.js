@@ -44,8 +44,8 @@ $(function () {
 
 /*------------- 轮播图 Start -------------*/
 
-var autoLb = false;         //autoLb=true为开启自动轮播
-var autoLbtime = 2;         //autoLbtime为轮播间隔时间（单位秒）
+var autoLb = true;         //autoLb=true为开启自动轮播
+var autoLbtime = 10;         //autoLbtime为轮播间隔时间（单位秒）
 var touch = true;           //touch=true为开启触摸滑动
 var slideBt = true;         //slideBt=true为开启滚动按钮
 
