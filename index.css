@@ -268,6 +268,7 @@ body {
     color: #ffc000;
     pointer-events: none;
     font-size: 2vw;
+    margin-left: -20%;
 }
 
 #uni-studio .program-model-descript ul {
@@ -296,7 +297,7 @@ body {
 #solution .item-button .shade {
     position: absolute;
     width: 1vw;
-    height: 62vh;
+    height: 69vh;
     background-color: #f2f2f2;
 }
 
