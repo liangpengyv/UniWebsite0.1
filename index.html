@@ -11,17 +11,15 @@
     <link rel="icon" type="image/x-icon" href="favicon.ico">
 
     <!-- 最新版本的 Bootstrap 核心 CSS 文件 -->
-    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@3.3.7/dist/css/bootstrap.min.css"
-        integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
-    <link rel="stylesheet" type="text/css" href="index.css">
-    <link rel="stylesheet" type="text/css" href="index-mobile.css">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@3.3.7/dist/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
+    <link rel="stylesheet" type="text/css" href="assets/css/index.css">
+    <link rel="stylesheet" type="text/css" href="assets/css/index-mobile.css">
 
+    <script type="text/javascript" src="assets/js/particles.js"></script>
     <script src="https://www.jq22.com/jquery/jquery-1.10.2.js"></script>
     <!-- 最新的 Bootstrap 核心 JavaScript 文件 -->
-    <script src="https://cdn.jsdelivr.net/npm/bootstrap@3.3.7/dist/js/bootstrap.min.js"
-        integrity="sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa"
-        crossorigin="anonymous"></script>
-    <script type="text/javascript" src="index.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@3.3.7/dist/js/bootstrap.min.js" integrity="sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa" crossorigin="anonymous"></script>
+    <script type="text/javascript" src="assets/js/index.js"></script>
 </head>
 
 <body>
@@ -30,7 +28,7 @@
     <div id="navigation">
         <div>
             <a href="/">
-                <img id="company-logo" src="img/header-logo.png">
+                <img id="company-logo" src="assets/img/header-logo.png">
             </a>
         </div>
         <div>
@@ -45,6 +43,7 @@
 
     <!-- 首页 -->
     <div id="home-page">
+        <div id="particles-js"></div>
         <p class="title">Uni Studio</p>
         <p class="description">打开 Uni Studio，轻松开启机器人流程自动化</p>
         <button type="button" class="btn btn-default btn-lg">开始使用</button>
@@ -53,8 +52,7 @@
     <!-- 关于 RPA -->
     <div id="about-rpa">
         <div class="unit-separator">
-            <p class="separator-title"><span class="glyphicon glyphicon-hand-right small"></span>
-                &nbsp;&nbsp;&nbsp;&nbsp;关于 RPA&nbsp;&nbsp;&nbsp;&nbsp;
+            <p class="separator-title"><span class="glyphicon glyphicon-hand-right small"></span> &nbsp;&nbsp;&nbsp;&nbsp;关于 RPA&nbsp;&nbsp;&nbsp;&nbsp;
                 <span class="glyphicon glyphicon-hand-left small"></span></p>
             <p class="separator-description">RPA 是以机器人作为虚拟劳动力，替代人在电脑前执行规律与重复性高的办公流程</p>
         </div>
@@ -62,23 +60,21 @@
             <div id="rpa-property-slide">
                 <div class="slide">
                     <a href="javascript:void(0)" class="img">
-                        <img src="img/about-rpa-easy.png" />
+                        <img src="assets/img/about-rpa-easy.png" />
                         <h2>易伸缩</h2>
-                        <p>基于 RPA 建立在当前系统外围的特性，这种无侵入的方式使得 RPA
-                            项目能够轻松应对当前系统的变化和业务流程的新需求，随时进行调整
+                        <p>基于 RPA 建立在当前系统外围的特性，这种无侵入的方式使得 RPA 项目能够轻松应对当前系统的变化和业务流程的新需求，随时进行调整
                         </p>
                     </a>
                     <a href="javascript:void(0)" class="img">
-                        <img src="img/about-rpa-no.png" />
+                        <img src="assets/img/about-rpa-no.png" />
                         <h2>无侵入</h2>
                         <p>RPA 的设计与实施，对底层系统无干扰，它的本质是无侵入性的，它会利用现有设施，而不会对那些成本高昂、难以更换的底层系统造成干扰
                         </p>
                     </a>
                     <a href="javascript:void(0)" class="img">
-                        <img src="img/about-rpa-ok.png" />
+                        <img src="assets/img/about-rpa-ok.png" />
                         <h2>见效快</h2>
-                        <p>与其他传统 IT 解决方案对比，RPA
-                            的特性让企业可以快速展开项目的概念验证、试点，到最终的制度订立，帮助企业快速实现自动化，实现收益
+                        <p>与其他传统 IT 解决方案对比，RPA 的特性让企业可以快速展开项目的概念验证、试点，到最终的制度订立，帮助企业快速实现自动化，实现收益
                         </p>
                     </a>
                     <div class="slide-number">
@@ -94,23 +90,17 @@
     <!-- Uni Studio -->
     <div id="uni-studio">
         <div class="unit-separator">
-            <p class="separator-title"><span class="glyphicon glyphicon-hand-right small"></span>
-                &nbsp;&nbsp;&nbsp;&nbsp;Uni Studio&nbsp;&nbsp;&nbsp;&nbsp;
+            <p class="separator-title"><span class="glyphicon glyphicon-hand-right small"></span> &nbsp;&nbsp;&nbsp;&nbsp;Uni Studio&nbsp;&nbsp;&nbsp;&nbsp;
                 <span class="glyphicon glyphicon-hand-left small"></span></p>
             <p class="separator-description">现在，打开 Uni Studio，轻松开启机器人流程自动化</p>
         </div>
         <div class="unit-content">
             <div class="program-display">
-                <img class="program-model" src="img/uni-studio-model-project.png" alt="project"
-                    style="width: 14.8%; height: 56.4%; margin-left: 4.3%; margin-top: 9.1%;" />
-                <img class="program-model" src="img/uni-studio-model-activities.png" alt="activities"
-                    style="width: 11.1%; height: 43.1%; margin-left: -0.7%; margin-top: -1.7%;" />
-                <img class="program-model" src="img/uni-studio-model-edit.png" alt="edit"
-                    style="width: 47.0%; height: 43.1%; margin-left: -0.7%; margin-top: -1.7%;" />
-                <img class="program-model" src="img/uni-studio-model-outline.png" alt="outline"
-                    style="width: 18.5%; height: 43.1%; margin-left: -0.7%; margin-top: -1.7%;" />
-                <img class="program-model" src="img/uni-studio-model-console.png" alt="console"
-                    style="width: 76.6%; height: 13.1%; margin-left: 19.0%; margin-top: -14.4%;" />
+                <img class="program-model" src="assets/img/uni-studio-model-project.png" alt="project" style="width: 14.8%; height: 56.4%; margin-left: 4.3%; margin-top: 9.1%;" />
+                <img class="program-model" src="assets/img/uni-studio-model-activities.png" alt="activities" style="width: 11.1%; height: 43.1%; margin-left: -0.7%; margin-top: -1.7%;" />
+                <img class="program-model" src="assets/img/uni-studio-model-edit.png" alt="edit" style="width: 47.0%; height: 43.1%; margin-left: -0.7%; margin-top: -1.7%;" />
+                <img class="program-model" src="assets/img/uni-studio-model-outline.png" alt="outline" style="width: 18.5%; height: 43.1%; margin-left: -0.7%; margin-top: -1.7%;" />
+                <img class="program-model" src="assets/img/uni-studio-model-console.png" alt="console" style="width: 76.6%; height: 13.1%; margin-left: 19.0%; margin-top: -14.4%;" />
             </div>
             <div class=" program-model-descript">
                 <button class="btn btn-default btn-lg"></button>
@@ -122,8 +112,7 @@
     <!-- 解决方案 -->
     <div id="solution">
         <div class="unit-separator">
-            <p class="separator-title"><span class="glyphicon glyphicon-hand-right small"></span>
-                &nbsp;&nbsp;&nbsp;&nbsp;解决方案&nbsp;&nbsp;&nbsp;&nbsp;
+            <p class="separator-title"><span class="glyphicon glyphicon-hand-right small"></span> &nbsp;&nbsp;&nbsp;&nbsp;解决方案&nbsp;&nbsp;&nbsp;&nbsp;
                 <span class="glyphicon glyphicon-hand-left small"></span></p>
             <p class="separator-description">财务、电信、保险、银行、运维…… 解放一个又一个繁复劳动</p>
         </div>
@@ -151,8 +140,7 @@
     <!-- 关于我们 -->
     <div id="about-us">
         <div class="unit-separator">
-            <p class="separator-title"><span class="glyphicon glyphicon-hand-right small"></span>
-                &nbsp;&nbsp;&nbsp;&nbsp;关于我们&nbsp;&nbsp;&nbsp;&nbsp;
+            <p class="separator-title"><span class="glyphicon glyphicon-hand-right small"></span> &nbsp;&nbsp;&nbsp;&nbsp;关于我们&nbsp;&nbsp;&nbsp;&nbsp;
                 <span class="glyphicon glyphicon-hand-left small"></span></p>
             <p class="separator-description">天行智能，在数字化时代，和您一起迎接机遇与转型挑战</p>
         </div>
@@ -160,21 +148,17 @@
             <div class="description">
                 <ul>
                     <li>
-                        <span class="glyphicon glyphicon-play small" style="color: #00a3ae;"></span>&nbsp;&nbsp;&nbsp;
-                        随着越来越多的人和行业依赖于电信领域提供的基础设施，电信行业的竞争越发激烈，为了保证竞争优势，电信公司必须提供更加高效、更低成本且更先进的服务。然而，随着业务的扩张，企业面临庞大客户体量的数据及众多相关业务流程处理的巨大挑战。
+                        <span class="glyphicon glyphicon-play small" style="color: #00a3ae;"></span>&nbsp;&nbsp;&nbsp; 随着越来越多的人和行业依赖于电信领域提供的基础设施，电信行业的竞争越发激烈，为了保证竞争优势，电信公司必须提供更加高效、更低成本且更先进的服务。然而，随着业务的扩张，企业面临庞大客户体量的数据及众多相关业务流程处理的巨大挑战。
                     </li>
                     <li>
-                        <span class="glyphicon glyphicon-play small" style="color: #00a3ae;"></span>&nbsp;&nbsp;&nbsp;
-                        RPA 在帮助电信公司应对和解决这些挑战方面具有独特优势。通过 RPA
-                        帮助电信公司管理大型非结构化数据集，精简运营任务，比如对客户资料的录入、套餐信息更新、信息同步等。在不久的将来，RPA
-                        可能成为电信行业不断发展壮大的好搭档，实现高层次企业发展，显著提升客户服务质量。
+                        <span class="glyphicon glyphicon-play small" style="color: #00a3ae;"></span>&nbsp;&nbsp;&nbsp; RPA 在帮助电信公司应对和解决这些挑战方面具有独特优势。通过 RPA 帮助电信公司管理大型非结构化数据集，精简运营任务，比如对客户资料的录入、套餐信息更新、信息同步等。在不久的将来，RPA 可能成为电信行业不断发展壮大的好搭档，实现高层次企业发展，显著提升客户服务质量。
                     </li>
                 </ul>
             </div>
             <div class="contact">
                 <div class="icon">
-                    <img class="left" src="img/about-us-use.png" />
-                    <img class="right" src="img/about-us-cooperation.png" />
+                    <img class="left" src="assets/img/about-us-use.png" />
+                    <img class="right" src="assets/img/about-us-cooperation.png" />
                 </div>
                 <div class="button">
                     <button class="btn btn-default btn-lg left">开始使用</button>
@@ -187,7 +171,7 @@
     <!-- 页脚 -->
     <div id="page-footer">
         <div class="logo">
-            <img src="img/header-logo.png">
+            <img src="assets/img/header-logo.png">
             <p>Power Everyone with Automation</p>
         </div>
         <div class="contact">

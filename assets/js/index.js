@@ -1,7 +1,7 @@
 /*------------ 导航栏变色 Start ----------------*/
 
 function scroll() {
-    var scrollTop = $(window).scrollTop();//获取当前窗口距顶部的高度
+    var scrollTop = $(window).scrollTop(); //获取当前窗口距顶部的高度
     if (scrollTop < 700) {
         var x = scrollTop / 700;
         $('#navigation-background').css('opacity', x);
@@ -10,11 +10,11 @@ function scroll() {
     }
 }
 
-$(window).on('scroll', function () {
+$(window).on('scroll', function() {
     scroll();
 });
 
-$(function () {
+$(function() {
     scroll();
 });
 
@@ -24,7 +24,7 @@ $(function () {
 /*------------- 平滑滚动到锚点 Start ---------------*/
 
 function topClickLink() {
-    $("#navigation .top-link").click(function () {
+    $("#navigation .top-link").click(function() {
         $("html, body").animate({
             scrollTop: $($(this).attr("href")).offset().top - 66 + "vh"
         }, {
@@ -35,32 +35,42 @@ function topClickLink() {
     });
 }
 
-$(function () {
+$(function() {
     topClickLink();
 });
 
 /*------------- 平滑滚动到锚点 End -----------------*/
 
 
+/*------------- 首屏粒子特效 Start ----------------*/
+
+/* particlesJS.load(@dom-id, @path-json, @callback (optional)); */
+particlesJS.load('particles-js', 'assets/config/particles.json', function() {
+    console.log('callback - particles.js config loaded');
+});
+
+/*------------- 首屏粒子特效 End -----------------*/
+
+
 /*------------- 轮播图 Start -------------*/
 
-var autoLb = true;         //autoLb=true为开启自动轮播
-var autoLbtime = 10;         //autoLbtime为轮播间隔时间（单位秒）
-var touch = true;           //touch=true为开启触摸滑动
-var slideBt = true;         //slideBt=true为开启滚动按钮
+var autoLb = true; //autoLb=true为开启自动轮播
+var autoLbtime = 10; //autoLbtime为轮播间隔时间（单位秒）
+var touch = true; //touch=true为开启触摸滑动
+var slideBt = true; //slideBt=true为开启滚动按钮
 
-var slideNub;               //轮播图片数量
+var slideNub; //轮播图片数量
 
 /**
  * 窗口大小改变时改变轮播图宽高
  */
-$(window).resize(function () {
+$(window).resize(function() {
     $(".slide").height($(".slide").width() * 0.56);
 });
 
-$(function () {
+$(function() {
     $(".slide").height($(".slide").width() * 0.56);
-    slideNub = $(".slide .img").size();             //获取轮播图片数量
+    slideNub = $(".slide .img").size(); //获取轮播图片数量
     for (i = 0; i < slideNub; i++) {
         $(".slide .img:eq(" + i + ")").attr("data-slide-imgId", i);
     }
@@ -98,7 +108,7 @@ $(function () {
 
     //自动轮播
     if (autoLb) {
-        setInterval(function () {
+        setInterval(function() {
             rightSlide();
         }, autoLbtime * 1000);
     }
@@ -163,7 +173,7 @@ function imgClickFy() {
 function slideLi() {
     var slideList = parseInt($(".slide .img3").attr("data-slide-imgId")) + 1;
 
-    $('#rpa-property-slide button').each(function () {
+    $('#rpa-property-slide button').each(function() {
         this.style.backgroundColor = 'white';
     });
     var slideButtonId = '#slide-button-' + slideList;
@@ -178,7 +188,7 @@ function tz(id) {
     var tzcs = id - (parseInt($(".slide .img3").attr("data-slide-imgId")) + 1);
     if (tzcs > 0) {
         for (i = 0; i < tzcs; i++) {
-            setTimeout(function () {
+            setTimeout(function() {
                 rightSlide();
             }, 1);
         }
@@ -186,7 +196,7 @@ function tz(id) {
     if (tzcs < 0) {
         tzcs = (-tzcs);
         for (i = 0; i < tzcs; i++) {
-            setTimeout(function () {
+            setTimeout(function() {
                 leftSlide();
             }, 1);
         }
@@ -198,14 +208,18 @@ function tz(id) {
  * 触摸滑动模块
  */
 function kTouch() {
-    var _start = 0, _end = 0, _content = document.getElementById("rpa-property-slide");
+    var _start = 0,
+        _end = 0,
+        _content = document.getElementById("rpa-property-slide");
     _content.addEventListener("touchstart", touchStart, false);
     _content.addEventListener("touchmove", touchMove, false);
     _content.addEventListener("touchend", touchEnd, false);
+
     function touchStart(event) {
         var touch = event.targetTouches[0];
         _start = touch.pageX;
     }
+
     function touchMove(event) {
         var touch = event.targetTouches[0];
         _end = (_start - touch.pageX);
@@ -287,7 +301,7 @@ var programUnitContentList = {
 function setProgramModelContent(item) {
     $('#uni-studio button').text(item.title);
     $('#uni-studio ul').empty();
-    item.description.forEach(function (item) {
+    item.description.forEach(function(item) {
         $('#uni-studio ul').append('<li style="padding: 17px;"><span class="glyphicon glyphicon-play small" style="color: #00a3ae;"></span>&nbsp;&nbsp;&nbsp;' + item + '</li>');
     });
 }
@@ -299,10 +313,10 @@ function setDefaultProgramModelContent() {
     setProgramModelContent(programUnitContentList['uni-studio']);
 }
 
-$(function () {
+$(function() {
     setDefaultProgramModelContent();
-    $('#uni-studio .program-model').mouseover(function (event) {
-        $('#uni-studio .program-model').each(function () {
+    $('#uni-studio .program-model').mouseover(function(event) {
+        $('#uni-studio .program-model').each(function() {
             this.style.opacity = 0.6;
         });
         event.currentTarget.style.opacity = 1;
@@ -313,8 +327,8 @@ $(function () {
         event.currentTarget.style.borderRadius = '3%';
         setProgramModelContent(programUnitContentList[event.currentTarget.alt]);
     });
-    $('#uni-studio .program-model').mouseout(function (event) {
-        $('#uni-studio .program-model').each(function () {
+    $('#uni-studio .program-model').mouseout(function(event) {
+        $('#uni-studio .program-model').each(function() {
             this.style.opacity = 1;
         });
         event.currentTarget.style.transform = 'scale(1)';
@@ -334,7 +348,7 @@ $(function () {
 var solutionContentList = {
     '财务': {
         'title': '财务行业',
-        'img': 'img/solution-finance.png',
+        'img': 'assets/img/solution-finance.png',
         'paragraphs': [
             '我爱你中国我爱你中国我爱你中国我爱你中国我爱你中国我爱你中国我爱你中国我爱你中国我爱你中国我爱你中国我爱你中国我爱你中国我爱你中国我爱你中国我爱你中国我爱你中国我爱你中国',
             '我亲爱的财务我亲爱的财务我亲爱的财务我亲爱的财务我亲爱的财务我亲爱的财务我亲爱的财务我亲爱的财务我亲爱的财务我亲爱的财务我亲爱的财务我亲爱的财务我亲爱的财务我亲爱的财务我亲爱的财务我亲爱的财务我亲爱的财务',
@@ -343,7 +357,7 @@ var solutionContentList = {
     },
     '电信': {
         'title': '电信行业',
-        'img': 'img/solution-telecom.png',
+        'img': 'assets/img/solution-telecom.png',
         'paragraphs': [
             '我爱你中国',
             '我爱你电信',
@@ -352,7 +366,7 @@ var solutionContentList = {
     },
     '保险': {
         'title': '保险行业',
-        'img': 'img/solution-insurance.png',
+        'img': 'assets/img/solution-insurance.png',
         'paragraphs': [
             '我爱你中国',
             '我爱你保险',
@@ -361,7 +375,7 @@ var solutionContentList = {
     },
     '金融与银行': {
         'title': '金融与银行',
-        'img': 'img/solution-bank.png',
+        'img': 'assets/img/solution-bank.png',
         'paragraphs': [
             '我爱你中国',
             '我爱你金融与银行',
@@ -370,7 +384,7 @@ var solutionContentList = {
     },
     '软件与运维': {
         'title': '软件与运维',
-        'img': 'img/solution-software.png',
+        'img': 'assets/img/solution-software.png',
         'paragraphs': [
             '我爱你中国',
             '我爱你软件与运维',
@@ -379,7 +393,7 @@ var solutionContentList = {
     },
     '零售与快消': {
         'title': '零售与快消',
-        'img': 'img/solution-retail.png',
+        'img': 'assets/img/solution-retail.png',
         'paragraphs': [
             '我爱你中国',
             '我爱你零售与快消',
@@ -388,7 +402,7 @@ var solutionContentList = {
     },
     '制造业': {
         'title': '制造业',
-        'img': 'img/solution-manufacturing.png',
+        'img': 'assets/img/solution-manufacturing.png',
         'paragraphs': [
             '我爱你中国',
             '我爱你制造业',
@@ -401,7 +415,7 @@ var solutionContentList = {
  * 重置解决方案选择状态
  */
 function resetSolutionSelector() {
-    $('#solution button').each(function () {
+    $('#solution button').each(function() {
         this.style.backgroundColor = '#ffffff';
     });
 }
@@ -414,7 +428,7 @@ function setSolutionContent(item) {
     $('#solution .title p').text(item.title);
     $('#solution img').attr('src', item.img);
     $('#solution ul').empty();
-    item.paragraphs.forEach(function (item) {
+    item.paragraphs.forEach(function(item) {
         $('#solution ul').append('<li style="padding: 17px; line-height: 200%;"><span class="glyphicon glyphicon-play small" style="color: #00a3ae;"></span>&nbsp;&nbsp;&nbsp;' + item + '</li>');
     });
 }
@@ -427,9 +441,9 @@ function setDefaultSolutionContent() {
     $('#solution button')[0].style.backgroundColor = '#e6e6e6'
 }
 
-$(function () {
+$(function() {
     setDefaultSolutionContent();
-    $('#solution button').mouseover(function (event) {
+    $('#solution button').mouseover(function(event) {
         resetSolutionSelector();
         event.currentTarget.style.backgroundColor = '#e6e6e6';
         setSolutionContent(solutionContentList[event.currentTarget.innerText]);
